@@ -8,4 +8,4 @@ COPY . /pytest-api-gorest
 WORKDIR /pytest-api-gorest
 
 RUN pip install --no-cache-dir -r requirements.txt
-CMD ["pytest", "tests_users.py tests_posts.py", "--junitxml=reports/result.xml"]
+CMD pytest ./tests_users.py ./tests_posts.py --junitxml=/pytest-api-gorest/result.xml
