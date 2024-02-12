@@ -1,12 +1,11 @@
 FROM ubuntu
-MAINTAINER gurevich89@gmail.com
 
 
 # Use an official Python runtime as a parent image
-FROM python:3.6-slim
+FROM python:3.9-slim
 
-COPY . /twtask_python
-WORKDIR /twtask_python
+COPY . /pytest-api-gorest
+WORKDIR /pytest-api-gorest
 
 RUN pip install --no-cache-dir -r requirements.txt
-CMD ["pytest", "test.py", "--junitxml=reports/result.xml"]
+CMD ["pytest", "tests_users.py tests_posts.py", "--junitxml=reports/result.xml"]
