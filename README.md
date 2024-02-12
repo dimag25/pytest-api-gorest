@@ -1,4 +1,4 @@
-Tests in pytest for free public API
+Tests in pytest for GRAPHQL free public API
 
 1. https://gorest.co.in/  and read the api docs
 2. Add user then get the user to see of all the details are correct.
