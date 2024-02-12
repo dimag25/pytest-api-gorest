@@ -35,7 +35,7 @@ def test_create_user(users_req):
     res = users_req.post(url=users_api.api_endpoint, data=user_data)
     assert res.status_code == 201, f"Expected Status [201], actual Status: {res.status_code}"
     # check user data correct in get user api by id
-    created_user = users_req.get(f'{USERS_ENDPOINT}/{res.json()["id"]}')
+    created_user = users_req.get(f'{users_api.api_endpoint}/{res.json()["id"]}')
     assert created_user.json()['name'] == json.loads(user_data)['name']
     assert created_user.json()['email'] == json.loads(user_data)['email']
     assert created_user.json()['gender'] == "male"
@@ -49,9 +49,9 @@ def test_update_user_name(users_req):
     print("\n original_username: ", original_username)
     user_data = generate_user_data()
     print("\n new user data: ", user_data)
-    res = users_req.put(url=f'{USERS_ENDPOINT}/{user["id"]}', data=user_data)
+    res = users_req.put(url=f'{users_api.api_endpoint}/{user["id"]}', data=user_data)
     assert res.status_code == 200, f"Expected Status [200], actual Status: {res.status_code}"
-    assert users_req.get(url=f'{USERS_ENDPOINT}/{user["id"]}').json()['name'] == json.loads(user_data)["name"]
+    assert users_req.get(url=f'{users_api.api_endpoint}/{user["id"]}').json()['name'] == json.loads(user_data)["name"]
 
 
 # Select 10 random distinct users and print their names
