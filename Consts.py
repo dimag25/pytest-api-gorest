@@ -1,0 +1,6 @@
+TOKEN = 'e2684965e4b313ee7b8e465d36c0bd4815561c6a16840d99eb9f83714077e365'
+API_BASE_URL = 'https://gorest.co.in/public/v2/'
+USERS_ENDPOINT = 'users'
+POSTS_ENDPOINT = 'posts'
+COMMENTS_ENDPOINT = 'comments'
+TODOS_ENDPOINT = 'todos'
