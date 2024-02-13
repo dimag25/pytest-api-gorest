@@ -11,3 +11,8 @@ def generate_user_data():
 def generate_post_data(user_id, title, body):
     return '{"user_id": "%s", "title": "%s", "body": "%s"}' \
            % (user_id, title, body)
+
+
+def generate_comment_data(user_id, name, email, title, body):
+    return '{"user_id": "%s","name": "%s","email":"%s", "title": "%s", "body": "%s"}' \
+           % (user_id, name, email, title, body)
