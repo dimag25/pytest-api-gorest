@@ -1,31 +1,9 @@
-import json
-import random
-import uuid
 
-import pytest
-import requests
 from api import api
 from Consts import POSTS_ENDPOINT, USERS_ENDPOINT
-
+from helpers import generate_post_data
 posts_api = api(endpoint=POSTS_ENDPOINT)
 users_api = api(endpoint=USERS_ENDPOINT)
-
-
-# fixture method - initialize request with headers
-@pytest.fixture(scope='module')
-def req():
-    with requests.Session() as s:
-        s.headers.update({
-            'Content-Type': 'application/json',
-            'Authorization': posts_api.authorization,
-        })
-
-        yield s
-
-
-def generate_post_data(user_id, title, body):
-    return '{"user_id": "%s", "title": "%s", "body": "%s"}' \
-           % (user_id, title, body)
 
 
 # Post 3 Posts in the following order
@@ -55,6 +33,7 @@ def test_user_posts(req):
     user_posts = req.get(url=f'{users_api.api_endpoint}/{user["id"]}/posts')
     for post in user_posts.json():
         print(f'\n{post["title"]}')
-        post_comments = req.get(url=f'{users_api.api_endpoint}/{post["id"]}/comments')
+        post_comments = req.get(
+            url=f'{users_api.api_endpoint}/{post["id"]}/comments')
         if post_comments.status_code != 404:
             print(post_comments)
