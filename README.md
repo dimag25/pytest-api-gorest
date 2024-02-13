@@ -1,6 +1,6 @@
-Project for tests in pytest for free public API endpoints.
+## Project for tests in pytest for free public API endpoints.
 
-- Check api https://gorest.co.in/  and read the api docs
+## Check api https://gorest.co.in/  and read the api docs
 
 `tests_users.py` related to `https://gorest.co.in/public/v2/users`
 - Add user then get the user to see of all the details are correct.
@@ -24,19 +24,18 @@ the same name, sorted from the biggest to smallest.
 - Get all users post and comment and print them in the same format as previous section.
 
 
-`Free Token`:
 
-e2684965e4b313ee7b8e465d36c0bd4815561c6a16840d99eb9f83714077e365
+## Project Setup
 
+### Step 1: Clone the project
 
-`Local Run prerequisites`
-- Install python3, pytest and requests libs
-- Run via command `pytest tests_users.py tests_posts.py --junitxml=reports/result.xml`
-
-
-
+```bash
+git clone https://github.com/dimag25/pytest-api-gorest.git
+cd pytest-api-gorest
+```
 
 
+### Step 2: `Local Run prerequisites`
 `Run via docker from any OS ( Win/Mac/Linux )`
 
 - Build : 
@@ -46,7 +45,7 @@ e2684965e4b313ee7b8e465d36c0bd4815561c6a16840d99eb9f83714077e365
 `docker run -v ./:/pytest-api-gorest  pytest-api-gorest`
 
 
-`Results`
+### View Results Locally:
 - See tests result report inside `/result.xml`
 
 Enjoy! :)
