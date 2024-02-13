@@ -1,4 +1,4 @@
-from Consts import API_BASE_URL
+from Utils.Consts import API_BASE_URL
 
 
 class api:

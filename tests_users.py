@@ -1,9 +1,9 @@
 import json
 import random
 
-from api import api
-from Consts import USERS_ENDPOINT
-from helpers import generate_user_data
+from Utils.api import api
+from Utils.Consts import USERS_ENDPOINT
+from Utils.helpers import generate_user_data
 users_api = api(endpoint=USERS_ENDPOINT)
 
 

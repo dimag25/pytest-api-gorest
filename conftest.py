@@ -1,4 +1,4 @@
-from Consts import TOKEN
+from Utils.Consts import TOKEN
 import pytest
 import requests
 # fixture method - initialize request with headers

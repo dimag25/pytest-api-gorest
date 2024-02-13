@@ -1,6 +1,6 @@
-from api import api
-from Consts import POSTS_ENDPOINT, USERS_ENDPOINT
-from helpers import generate_post_data, generate_comment_data
+from Utils.api import api
+from Utils.Consts import POSTS_ENDPOINT, USERS_ENDPOINT
+from Utils.helpers import generate_post_data, generate_comment_data
 
 posts_api = api(endpoint=POSTS_ENDPOINT)
 users_api = api(endpoint=USERS_ENDPOINT)
