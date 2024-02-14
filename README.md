@@ -45,7 +45,32 @@ cd pytest-api-gorest
 `docker run -v ./:/pytest-api-gorest  pytest-api-gorest`
 
 
-### View Results Locally:
+### View XML Results Locally:
 - See tests result report inside `/result.xml`
+
+## View results Via Allure reporter
+
+- Install Allure Commandline To View Test results
+
+#### For Windows:
+
+Follow the instructions [here](https://scoop.sh/) to install Scoop.<br>
+Run the following command to install Allure using Scoop:
+
+```bash
+scoop install allure
+```
+
+#### For Mac:
+
+```bash
+brew install allure
+```
+
+### View Results Locally:
+
+```bash
+allure serve allure-results
+```
 
 Enjoy! :)
